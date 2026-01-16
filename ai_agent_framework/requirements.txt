@@ -1,0 +1,53 @@
+# FastAPI & Web
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+python-multipart==0.0.6
+websockets==12.0
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# LangChain 生态 (1.x版本)
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+langchain-community>=0.3.0
+
+# LLM Providers
+openai>=1.40.0
+dashscope==1.14.1
+transformers>=4.37.0
+accelerate==0.26.0
+
+# Vector Database
+pymilvus>=2.3.0
+
+# MySQL Database
+sqlalchemy[asyncio]>=2.0.30
+aiomysql==0.2.0
+pymysql==1.1.0
+
+# Embeddings
+sentence-transformers>=2.3.0
+
+# Fine-tuning (optional, install manually if needed)
+# peft>=0.8.0
+# bitsandbytes>=0.42.0
+# datasets>=2.16.0
+# trl>=0.7.10
+
+# Utilities
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+python-dotenv==1.0.0
+aiofiles==23.2.1
+httpx>=0.26.0
+tenacity==8.2.3
+tiktoken>=0.5.0
+
+# Logging & Monitoring
+loguru==0.7.2
+rich==13.7.0
+
+# Testing
+pytest==7.4.4
+pytest-asyncio==0.23.3

@@ -1,0 +1,25 @@
+npm warn Unknown user config "python". This will stop working in the next major version of npm.
+
+> ai-agent-web@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.1.0
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.110.17:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+
+   We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+   The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+   	- target was set to ES2017 (For top-level `await`. Note: Next.js only polyfills for the esmodules target.)
+
+ ✓ Ready in 2s
+ ○ Compiling / ...
+ ✓ Compiled / in 3.6s (970 modules)
+ GET / 200 in 3902ms
+ ✓ Compiled in 504ms (445 modules)
+ GET / 200 in 30ms
+ ✓ Compiled /login in 395ms (991 modules)
+ GET /login 200 in 461ms

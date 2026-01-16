@@ -1,0 +1,13 @@
+# Available Tools
+
+## lcciu_yb
+
+Parameters:
+- summary (required): Put your COMPLETE response here in Markdown format (supports tables, code blocks, lists)
+- reason (optional)
+
+ALWAYS call lcciu_yb at the end of EVERY response.
+
+## Format
+
+{"tool": "lcciu_yb", "arguments": {"summary": "Your full Markdown response here"}}
