@@ -97,7 +97,22 @@ cp .env.example .env
 # - JWT_SECRET_KEY (生产环境务必修改)
 ```
 
-### 3. 启动 Milvus (Docker)
+### 3. 初始化数据库
+
+**方式一：自动创建（推荐）**
+
+启动服务时会自动创建表结构。
+
+**方式二：手动执行SQL脚本**
+
+```bash
+# 使用MySQL客户端执行建表脚本
+mysql -u root -p < scripts/init_db.sql
+```
+
+SQL脚本位置：`scripts/init_db.sql`
+
+### 4. 启动 Milvus (Docker)
 
 ```bash
 # 下载 docker-compose 文件
