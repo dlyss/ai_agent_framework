@@ -9,18 +9,165 @@ npm warn Unknown user config "python". This will stop working in the next major 
    - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 1848ms
+ ✓ Ready in 1899ms
  ○ Compiling / ...
- ✓ Compiled / in 1456ms (961 modules)
- GET / 200 in 1755ms
- ✓ Compiled in 641ms (445 modules)
- GET / 200 in 36ms
- ✓ Compiled /login in 348ms (991 modules)
- GET /login 200 in 410ms
- GET /login 200 in 138ms
- GET /login 200 in 26ms
- GET /login 200 in 26ms
- GET /login 200 in 18ms
- ○ Compiling /chat ...
- ✓ Compiled /chat in 1065ms (1367 modules)
- GET /chat 200 in 1128ms
+ ✓ Compiled / in 1372ms (961 modules)
+ GET / 200 in 1652ms
+ ✓ Compiled in 448ms (445 modules)
+ GET / 200 in 51ms
+ ✓ Compiled /login in 291ms (991 modules)
+ GET /login 200 in 351ms
+ ✓ Compiled /_not-found in 188ms (995 modules)
+ GET /sw.js 404 in 253ms
+ ✓ Compiled /chat in 441ms (1377 modules)
+ GET /chat 200 in 479ms
+ ✓ Compiled /rag in 406ms (1396 modules)
+ GET /rag 200 in 429ms
+ GET /chat 200 in 22ms
+ GET /rag 200 in 16ms
+ GET /chat 200 in 22ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 995ms (1398 modules)
+ GET /chat 200 in 474ms
+ GET /login 200 in 44ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /_not-found in 140ms (1388 modules)
+ GET /sw.js 404 in 340ms
+ GET /chat 200 in 250ms
+ GET /login 200 in 79ms
+ GET /sw.js 404 in 14ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 648ms (1402 modules)
+ GET /chat 200 in 445ms
+ GET /login 200 in 136ms
+ GET /sw.js 404 in 16ms
+ GET /chat 200 in 32ms
+ GET /rag 200 in 15ms
+ GET /chat 200 in 9ms
+ ✓ Compiled in 520ms (1398 modules)
+ GET /chat 200 in 52ms
+ ✓ Compiled in 278ms (1398 modules)
+ GET /chat 200 in 34ms
+ ⨯ ./app/rag/page.tsx
+Error:   [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4m/Users/done/github/python/AiCareer/ai_agent_web/app/rag/page.tsx[0m:80:1]
+ [2m77[0m |   if (!token) return null;
+ [2m78[0m | 
+ [2m79[0m |   return (
+ [2m80[0m |     <div className="flex h-screen bg-background">
+    : [35;1m     ^^^[0m
+ [2m81[0m |       {/* Sidebar */}
+ [2m82[0m |       <div className="w-64 border-r bg-muted/30 flex flex-col">
+ [2m83[0m |         <div className="p-4 border-b">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/rag/page.tsx
+ ○ Compiling /_error ...
+ ⨯ ./app/rag/page.tsx
+Error:   [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4m/Users/done/github/python/AiCareer/ai_agent_web/app/rag/page.tsx[0m:80:1]
+ [2m77[0m |   if (!token) return null;
+ [2m78[0m | 
+ [2m79[0m |   return (
+ [2m80[0m |     <div className="flex h-screen bg-background">
+    : [35;1m     ^^^[0m
+ [2m81[0m |       {/* Sidebar */}
+ [2m82[0m |       <div className="w-64 border-r bg-muted/30 flex flex-col">
+ [2m83[0m |         <div className="p-4 border-b">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/rag/page.tsx
+ GET /chat 500 in 1746ms
+ GET /chat 500 in 7ms
+ GET /chat 500 in 79ms
+ GET /chat 500 in 16ms
+ ⨯ ./app/rag/page.tsx
+Error:   [31mx[0m Unexpected token `div`. Expected jsx identifier
+    ,-[[36;1;4m/Users/done/github/python/AiCareer/ai_agent_web/app/rag/page.tsx[0m:80:1]
+ [2m77[0m |   if (!token) return null;
+ [2m78[0m | 
+ [2m79[0m |   return (
+ [2m80[0m |     <div className="flex h-screen bg-background">
+    : [35;1m     ^^^[0m
+ [2m81[0m |       {/* Sidebar */}
+ [2m82[0m |       <div className="w-64 border-r bg-muted/30 flex flex-col">
+ [2m83[0m |         <div className="p-4 border-b">
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/rag/page.tsx
+ GET /sw.js 500 in 763ms
+ GET /_next/static/webpack/0a39da11dfa5b37f.webpack.hot-update.json 500 in 748ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /chat 500 in 24ms
+ GET /sw.js 500 in 8ms
+ ✓ Compiled /_not-found in 835ms (1635 modules)
+ GET /chat 200 in 194ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /login 200 in 40ms
+ GET /sw.js 404 in 17ms
+ GET /chat 200 in 25ms
+ GET /login 200 in 64ms
+ GET /sw.js 404 in 27ms
+ GET /chat 200 in 6ms
+ ✓ Compiled in 1196ms (1649 modules)
+ GET /chat 200 in 54ms
+ ✓ Compiled in 363ms (1649 modules)
+ GET /chat 200 in 27ms
+ GET /rag 200 in 53ms
+ GET /chat 200 in 16ms
+ GET /rag 200 in 6ms
+ GET /chat 200 in 17ms
+ GET /chat 200 in 56ms
+ ✓ Compiled in 1481ms (1645 modules)
+ ✓ Compiled in 1044ms (1647 modules)
+ ✓ Compiled in 460ms (1647 modules)
+ ✓ Compiled in 858ms (1647 modules)
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 765ms (1652 modules)
+ GET /admin 200 in 837ms
+ GET /rag 200 in 27ms
+ GET /chat 200 in 19ms
+ GET /chat 200 in 198ms
+ GET /login 200 in 29ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 603ms (1656 modules)
+ GET /sw.js 404 in 699ms
+ GET /chat 200 in 21ms
+ GET /admin 200 in 35ms
+ ✓ Compiled in 986ms (1666 modules)
+ GET /admin 200 in 20ms
+ ✓ Compiled in 474ms (1666 modules)
+ GET /admin 200 in 34ms
+ ✓ Compiled in 946ms (1666 modules)
+ GET /admin 200 in 21ms
+ ✓ Compiled in 708ms (1666 modules)
+ GET /admin 200 in 25ms
+ GET /admin 200 in 101ms
+ GET /login 200 in 19ms
+ ✓ Compiled /_not-found in 327ms (1656 modules)
+ GET /sw.js 404 in 394ms
+ GET /chat 200 in 11ms
+ ✓ Compiled in 835ms (1666 modules)
+ GET /chat 200 in 46ms
+ ✓ Compiled in 467ms (1666 modules)
+ GET /chat 200 in 28ms
+ ✓ Compiled in 516ms (1666 modules)
+ GET /chat 200 in 26ms
+ ✓ Compiled in 280ms (1666 modules)
+ GET /chat 200 in 17ms
+ ✓ Compiled in 481ms (1666 modules)
+ GET /chat 200 in 22ms
+ ✓ Compiled in 264ms (1666 modules)
+ GET /chat 200 in 16ms

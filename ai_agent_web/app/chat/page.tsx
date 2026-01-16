@@ -17,7 +17,8 @@ import {
   LogOut,
   Settings,
   Trash2,
-  MessageSquare
+  MessageSquare,
+  FileText
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import ReactMarkdown from "react-markdown";
@@ -129,38 +130,86 @@ export default function ChatPage() {
       {/* Sidebar */}
       <div className="w-64 border-r bg-muted/30 flex flex-col">
         <div className="p-4 border-b">
-          <div className="flex items-center gap-2">
-            <Bot className="h-6 w-6 text-primary" />
-            <span className="font-semibold">AI Agent</span>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Bot className="h-6 w-6 text-primary" />
+              <span className="font-semibold">AI Agent</span>
+            </div>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="h-9 w-9"
+              onClick={() => router.push("/admin")}
+              title="后台管理"
+            >
+              <Settings className="h-5 w-5" />
+            </Button>
           </div>
         </div>
         
-        <div className="flex-1 p-4">
-          <Button 
-            variant="outline" 
-            className="w-full justify-start gap-2"
-            onClick={clearMessages}
-          >
-            <MessageSquare className="h-4 w-4" />
-            新对话
-          </Button>
+        <div className="flex-1 p-4 space-y-2">
+          {/* 功能模块导航 */}
+          <div className="space-y-1">
+            <p className="text-xs text-muted-foreground px-2 mb-2">功能模块</p>
+            <Button 
+              variant="default" 
+              className="w-full justify-start gap-2 bg-primary text-primary-foreground"
+            >
+              <MessageSquare className="h-4 w-4" />
+              AI 对话
+            </Button>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start gap-2 hover:bg-muted"
+              onClick={() => router.push("/rag")}
+            >
+              <FileText className="h-4 w-4" />
+              RAG 知识库
+            </Button>
+          </div>
+          
+          {/* 模型选择 */}
+          <div className="border-t pt-4 mt-4">
+            <p className="text-xs text-muted-foreground px-2 mb-2">模型设置</p>
+            <select 
+              className="w-full p-2 rounded-md border bg-background text-sm"
+              value={model}
+              onChange={(e) => useChatStore.getState().setModel(e.target.value)}
+            >
+              <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+              <option value="gpt-4">GPT-4</option>
+              <option value="qwen-turbo">通义千问 Turbo</option>
+              <option value="qwen-plus">通义千问 Plus</option>
+            </select>
+          </div>
+          
+          <div className="border-t pt-4 mt-4">
+            <p className="text-xs text-muted-foreground px-2 mb-2">对话操作</p>
+            <Button 
+              variant="outline" 
+              className="w-full justify-start gap-2"
+              onClick={clearMessages}
+            >
+              <MessageSquare className="h-4 w-4" />
+              新建对话
+            </Button>
+          </div>
         </div>
 
-        <div className="p-4 border-t space-y-2">
+        <div className="p-4 border-t space-y-3">
           <div className="flex items-center gap-2 px-2 py-1">
             <Avatar className="h-8 w-8">
               <AvatarFallback>{user?.username?.[0]?.toUpperCase() || "U"}</AvatarFallback>
             </Avatar>
-            <span className="text-sm font-medium truncate">{user?.username}</span>
+            <div className="flex-1 min-w-0">
+              <span className="text-sm font-medium truncate block">{user?.username}</span>
+              <span className="text-xs text-muted-foreground">已登录</span>
+            </div>
           </div>
-          <div className="flex gap-2">
-            <Button variant="ghost" size="sm" className="flex-1" onClick={() => router.push("/rag")}>
-              <Settings className="h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="sm" className="flex-1" onClick={handleLogout}>
-              <LogOut className="h-4 w-4" />
-            </Button>
-          </div>
+          <Button variant="outline" size="sm" className="w-full justify-start gap-2" onClick={handleLogout}>
+            <LogOut className="h-4 w-4" />
+            退出登录
+          </Button>
         </div>
       </div>
 

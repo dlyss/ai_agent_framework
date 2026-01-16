@@ -18,6 +18,7 @@ from app.api.routes import (
     finetune_router,
     ws_router,
 )
+from app.api.models import router as models_router
 from utils.logger import get_logger
 from utils.exceptions import AIAgentException
 
@@ -131,6 +132,7 @@ def create_app() -> FastAPI:
     app.include_router(rag_router, prefix=api_prefix)
     app.include_router(memory_router, prefix=api_prefix)
     app.include_router(finetune_router, prefix=api_prefix)
+    app.include_router(models_router, prefix=api_prefix)
     app.include_router(ws_router)
     
     return app

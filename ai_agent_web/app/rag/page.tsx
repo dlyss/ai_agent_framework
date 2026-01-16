@@ -10,11 +10,12 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { toast } from "@/components/ui/toaster";
-import { ArrowLeft, Upload, Search, Loader2, FileText, Bot } from "lucide-react";
+import { ArrowLeft, Upload, Search, Loader2, FileText, Bot, MessageSquare, LogOut, Settings } from "lucide-react";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 export default function RAGPage() {
   const router = useRouter();
-  const { token } = useAuthStore();
+  const { token, user, logout } = useAuthStore();
   const [isLoading, setIsLoading] = useState(false);
   const [collectionName, setCollectionName] = useState("default");
   const [documents, setDocuments] = useState("");
@@ -68,24 +69,85 @@ export default function RAGPage() {
     }
   };
 
+  const handleLogout = () => {
+    logout();
+    router.push("/login");
+  };
+
   if (!token) return null;
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="border-b">
-        <div className="container mx-auto px-4 h-14 flex items-center gap-4">
-          <Button variant="ghost" size="icon" onClick={() => router.push("/chat")}>
-            <ArrowLeft className="h-5 w-5" />
-          </Button>
-          <div className="flex items-center gap-2">
-            <Bot className="h-5 w-5 text-primary" />
-            <span className="font-semibold">RAG 知识库</span>
+    <div className="flex h-screen bg-background">
+      {/* Sidebar */}
+      <div className="w-64 border-r bg-muted/30 flex flex-col">
+        <div className="p-4 border-b">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Bot className="h-6 w-6 text-primary" />
+              <span className="font-semibold">AI Agent</span>
+            </div>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="h-9 w-9"
+              onClick={() => router.push("/admin")}
+              title="后台管理"
+            >
+              <Settings className="h-5 w-5" />
+            </Button>
           </div>
         </div>
-      </header>
+        
+        <div className="flex-1 p-4 space-y-2">
+          {/* 功能模块导航 */}
+          <div className="space-y-1">
+            <p className="text-xs text-muted-foreground px-2 mb-2">功能模块</p>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-start gap-2 hover:bg-muted"
+              onClick={() => router.push("/chat")}
+            >
+              <MessageSquare className="h-4 w-4" />
+              AI 对话
+            </Button>
+            <Button 
+              variant="default" 
+              className="w-full justify-start gap-2 bg-primary text-primary-foreground"
+            >
+              <FileText className="h-4 w-4" />
+              RAG 知识库
+            </Button>
+          </div>
+        </div>
 
-      <main className="container mx-auto px-4 py-8">
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="p-4 border-t space-y-3">
+          <div className="flex items-center gap-2 px-2 py-1">
+            <Avatar className="h-8 w-8">
+              <AvatarFallback>{user?.username?.[0]?.toUpperCase() || "U"}</AvatarFallback>
+            </Avatar>
+            <div className="flex-1 min-w-0">
+              <span className="text-sm font-medium truncate block">{user?.username}</span>
+              <span className="text-xs text-muted-foreground">已登录</span>
+            </div>
+          </div>
+          <Button variant="outline" size="sm" className="w-full justify-start gap-2" onClick={handleLogout}>
+            <LogOut className="h-4 w-4" />
+            退出登录
+          </Button>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <header className="h-14 border-b flex items-center px-4">
+          <div className="flex items-center gap-2">
+            <FileText className="h-5 w-5 text-primary" />
+            <span className="font-medium">RAG 知识库</span>
+          </div>
+        </header>
+
+        <main className="flex-1 overflow-auto p-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -148,8 +210,9 @@ export default function RAGPage() {
               )}
             </CardContent>
           </Card>
-        </div>
-      </main>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
