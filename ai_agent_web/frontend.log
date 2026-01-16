@@ -9,17 +9,18 @@ npm warn Unknown user config "python". This will stop working in the next major 
    - Environments: .env.local
 
  ✓ Starting...
-
-   We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
-   The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
-
-   	- target was set to ES2017 (For top-level `await`. Note: Next.js only polyfills for the esmodules target.)
-
- ✓ Ready in 2s
+ ✓ Ready in 1848ms
  ○ Compiling / ...
- ✓ Compiled / in 3.6s (970 modules)
- GET / 200 in 3902ms
- ✓ Compiled in 504ms (445 modules)
- GET / 200 in 30ms
- ✓ Compiled /login in 395ms (991 modules)
- GET /login 200 in 461ms
+ ✓ Compiled / in 1456ms (961 modules)
+ GET / 200 in 1755ms
+ ✓ Compiled in 641ms (445 modules)
+ GET / 200 in 36ms
+ ✓ Compiled /login in 348ms (991 modules)
+ GET /login 200 in 410ms
+ GET /login 200 in 138ms
+ GET /login 200 in 26ms
+ GET /login 200 in 26ms
+ GET /login 200 in 18ms
+ ○ Compiling /chat ...
+ ✓ Compiled /chat in 1065ms (1367 modules)
+ GET /chat 200 in 1128ms

@@ -26,10 +26,13 @@ INSERT INTO users (username, email, hashed_password, is_active, is_superuser)
 VALUES (
     'admin',
     'admin@example.com',
-    '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/X4.NAWYYjk7U1Ng3m',
+    '$2b$12$yzBahATtzjJT9Q3yVI1pAOa682lbVAaOQKuhAEyfAboNuzVSwqA2C',
     TRUE,
     TRUE
-) ON DUPLICATE KEY UPDATE username=username;
+) ON DUPLICATE KEY UPDATE hashed_password='$2b$12$yzBahATtzjJT9Q3yVI1pAOa682lbVAaOQKuhAEyfAboNuzVSwqA2C';
+
+-- 更新已有admin用户的密码（如果需要）
+-- UPDATE users SET hashed_password='$2b$12$yzBahATtzjJT9Q3yVI1pAOa682lbVAaOQKuhAEyfAboNuzVSwqA2C' WHERE username='admin';
 
 -- 查看表结构
 -- DESCRIBE users;
